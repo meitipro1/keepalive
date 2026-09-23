@@ -80,7 +80,7 @@ def test_exactly_the_thirteen_methods_of_section_four():
 def test_the_runtime_is_pinned():
     lines = SOURCE.splitlines()
     assert lines[0] == '# { "Depends": "' + RUNTIME + '" }'
-    ported = (ROOT / "contracts" / "studio-next" / "keepalive.py").read_text(encoding="utf-8").splitlines()
+    ported = (ROOT / "archive" / "studio-next" / "contracts" / "keepalive.py").read_text(encoding="utf-8").splitlines()
     assert ported[0] == "# v0.3.0"
     assert ported[1] == '# { "Depends": "' + RUNTIME_STUDIO_NEXT + '" }'
     for text in (SOURCE, "\n".join(ported)):

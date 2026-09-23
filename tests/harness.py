@@ -22,11 +22,11 @@ ROOT = HERE.parent
 CONTRACT = pathlib.Path(os.environ.get("KEEPALIVE_CONTRACT") or ROOT / "contracts" / "keepalive.py")
 PROBE = ROOT / "eval" / "probe_contract.py"
 
-#: The two runtimes the contract ships for. "studionet" is contracts/, the
-#: primary deployment, on py-genlayer:1jb45aa8. "studio-next" is the port in
-#: contracts/studio-next/, on py-genlayer:5jycge4q, written by scripts/port.py.
+#: The two runtimes the contract has run on. "studionet" is contracts/, the
+#: deployment, on py-genlayer:1jb45aa8. "studio-next" is the archived port in
+#: archive/studio-next/, on py-genlayer:5jycge4q, written by scripts/port.py.
 #: conftest.py runs every contract test once per runtime by setting PAIR.
-PAIRS = {"studionet": CONTRACT, "studio-next": ROOT / "contracts" / "studio-next" / "keepalive.py"}
+PAIRS = {"studionet": CONTRACT, "studio-next": ROOT / "archive" / "studio-next" / "contracts" / "keepalive.py"}
 PAIR = "studionet"
 
 sys.path.insert(0, str(HERE))

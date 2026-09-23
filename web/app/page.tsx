@@ -30,7 +30,7 @@ const FAQ = [
   ["What if a link breaks?", "A page that cannot be read shows up as unreadable to the judge. If nothing in a report can be read, the period is UNREADABLE: no strike, and the builder can swap links once inside the grace days."],
   ["Can I leave?", "Always. Exit burns your shares and sends you your part of everything not yet released, in any state: active, paused or closed. It is never hidden or disabled."],
   ["What does it cost?", `Only what you choose to fund. On ${NETWORK_SHORT} the GEN is test GEN with no value, and the faucet on every write screen hands it out.`],
-  ["Which network?", `${NETWORK_NAME}, chain ${DEPLOYMENT.chainId} (0x${CHAIN_HEX.slice(2).toUpperCase()}). The contract address is in the footer, and the same contract, ported, was first built and evaluated on Studio Next.`],
+  ["Which network?", `${NETWORK_NAME}, chain ${DEPLOYMENT.chainId} (0x${CHAIN_HEX.slice(2).toUpperCase()}). The contract address is in the footer, and every verdict is a transaction anyone can open on the explorer.`],
   ["What does it not judge?", "Quality, popularity and pace. Keepalive proves that work on the mission happened, not that it was good or that it mattered. That stays the patrons' call, which is why every reason is public."],
 ];
 

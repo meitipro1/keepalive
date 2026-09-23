@@ -6,7 +6,8 @@ Two networks, two SDK lines, one file:
   studionet    chain 61999, GenVM v0.2.16, consensus without fee deposits.
                The site's network and the primary deployment. genlayer-py 0.18.
   studio-next  chain 61997, consensus v0.6 with a fee deposit on every write.
-               Where Keepalive was first built and evaluated. genlayer-py 0.19.0rc2.
+               Where Keepalive was first built and evaluated; archived in
+               archive/studio-next/. genlayer-py 0.19.0rc2.
 
 Pick one with KEEPALIVE_NETWORK (default studionet). Each SDK line can reach only
 its own network, measured by Recourse: 0.19 cannot read studionet and 0.18 knows
@@ -52,6 +53,8 @@ from genlayer_py import create_account, create_client
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FROZEN = ROOT / "contracts" / "FROZEN.json"
+#: The archived Studio Next deployment keeps its own record beside its files.
+FROZEN_STUDIO_NEXT = ROOT / "archive" / "studio-next" / "FROZEN.json"
 WEB_DEPLOYMENT = ROOT / "web" / "lib" / "deployment.json"
 KEYS = pathlib.Path(os.environ.get("KEEPALIVE_KEYS", pathlib.Path.home() / ".keepalive" / "accounts.json"))
 GEN = 10**18
@@ -84,11 +87,11 @@ NETWORKS = {
         "runtime": "py-genlayer:5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",
         "v06": True,
         "files": {
-            "keepalive": ROOT / "contracts" / "studio-next" / "keepalive.py",
-            "probe": ROOT / "eval" / "studio-next" / "probe_contract.py",
-            "web_probe": ROOT / "eval" / "studio-next" / "web_probe.py",
+            "keepalive": ROOT / "archive" / "studio-next" / "contracts" / "keepalive.py",
+            "probe": ROOT / "archive" / "studio-next" / "eval" / "probe_contract.py",
+            "web_probe": ROOT / "archive" / "studio-next" / "eval" / "web_probe.py",
         },
-        "eval": ROOT / "eval" / "studio-next",
+        "eval": ROOT / "archive" / "studio-next" / "eval",
         "sdk": "genlayer-py 0.19.0rc2 (requirements-studio-next.txt)",
     },
 }
@@ -202,10 +205,15 @@ def accounts(*names: str) -> dict:
 
 
 # --- the record -----------------------------------------------------------
+def _record_path() -> pathlib.Path:
+    return FROZEN_STUDIO_NEXT if NETWORK == "studio-next" else FROZEN
+
+
 def frozen() -> dict:
-    if not FROZEN.exists():
+    path = _record_path()
+    if not path.exists():
         return {"deployments": {}}
-    return json.loads(FROZEN.read_text(encoding="utf-8"))
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def deployment(network: str | None = None) -> dict:
@@ -217,7 +225,7 @@ def deployment(network: str | None = None) -> dict:
 
 
 def save_frozen(record: dict) -> None:
-    FROZEN.write_text(json.dumps(record, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    _record_path().write_text(json.dumps(record, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     entry = record.get("deployments", {}).get(SITE_NETWORK, {})
     if not entry:
         return

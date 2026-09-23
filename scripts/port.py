@@ -2,22 +2,23 @@
 """
 The Studio Next port, generated from the Studionet contracts.
 
-    python scripts/port.py           # write the studio-next/ files and PORT.diff
+    python scripts/port.py           # write archive/studio-next/ and its PORT.diff
     python scripts/port.py --check   # exit 1 unless they are exactly what this writes
 
 Keepalive runs on Studionet (chain 61999), whose GenVM is v0.2.16 and whose
 runner is py-genlayer:1jb45aa8. The same logic was first built and evaluated on
-Studio Next (chain 61997), which runs the v0.3 standard library under
-py-genlayer:5jycge4q. That library renamed three things the contract calls and
+Studio Next (chain 61997), and that work is kept in archive/studio-next/.
+Studio Next runs the v0.3 standard library under py-genlayer:5jycge4q, which
+renamed three things the contract calls and
 stopped exporting gl and the storage names through the star import, so the
 Studionet file cannot load there and the other way round.
 
 The Studio Next files are a function of the Studionet ones, never a second copy
 edited by hand. Everything this changes is in the tables below: the runtime
 header, two import lines, and three API names. The logic, the rubric and every
-string are the Studionet files'. contracts/studio-next/PORT.diff is always the
-whole difference, and the Studio Next deployment recorded in
-contracts/FROZEN.json is held to these exact bytes by scripts/verify.py.
+string are the Studionet files'. archive/studio-next/contracts/PORT.diff is always
+the whole difference, and the archived Studio Next deployment recorded in
+archive/studio-next/FROZEN.json is held to these exact bytes by scripts/verify.py.
 """
 
 from __future__ import annotations
@@ -47,12 +48,12 @@ RENAMES = (
 )
 
 PAIRS = (
-    ("contracts/keepalive.py", "contracts/studio-next/keepalive.py"),
-    ("eval/probe_contract.py", "eval/studio-next/probe_contract.py"),
-    ("eval/web_probe.py", "eval/studio-next/web_probe.py"),
+    ("contracts/keepalive.py", "archive/studio-next/contracts/keepalive.py"),
+    ("eval/probe_contract.py", "archive/studio-next/eval/probe_contract.py"),
+    ("eval/web_probe.py", "archive/studio-next/eval/web_probe.py"),
 )
 
-DIFF = ROOT / "contracts" / "studio-next" / "PORT.diff"
+DIFF = ROOT / "archive" / "studio-next" / "contracts" / "PORT.diff"
 
 
 def storage_import(text: str) -> str:
@@ -92,7 +93,7 @@ def unport(text: str) -> str:
 def render() -> dict[pathlib.Path, str]:
     outputs: dict[pathlib.Path, str] = {}
     diff_lines = [
-        "# contracts/studio-next/PORT.diff, written by scripts/port.py. Do not edit it.",
+        "# archive/studio-next/contracts/PORT.diff, written by scripts/port.py. Do not edit it.",
         "#",
         f"# The whole difference between the Studionet files ({RUNTIME_STUDIONET})",
         f"# and the Studio Next files ({RUNTIME_STUDIO_NEXT}).",

@@ -1,4 +1,4 @@
-# contracts/studio-next/PORT.diff, written by scripts/port.py. Do not edit it.
+# archive/studio-next/contracts/PORT.diff, written by scripts/port.py. Do not edit it.
 #
 # The whole difference between the Studionet files (py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6)
 # and the Studio Next files (py-genlayer:5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng).
@@ -6,7 +6,7 @@
 # names: gl.Contract, gl.vm.run_nondet_unsafe and gl.message_raw.
 
 --- contracts/keepalive.py
-+++ contracts/studio-next/keepalive.py
++++ archive/studio-next/contracts/keepalive.py
 @@ -1 +1,2 @@
 -# { "Depends": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6" }
 +# v0.3.0
@@ -27,7 +27,7 @@
 -        return _seconds(gl.message_raw["datetime"])
 +        return _seconds(gl.message.raw["datetime"])
 --- eval/probe_contract.py
-+++ eval/studio-next/probe_contract.py
++++ archive/studio-next/eval/probe_contract.py
 @@ -1 +1,2 @@
 -# { "Depends": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6" }
 +# v0.3.0
@@ -48,7 +48,7 @@
 -        now = _seconds(gl.message_raw["datetime"])
 +        now = _seconds(gl.message.raw["datetime"])
 --- eval/web_probe.py
-+++ eval/studio-next/web_probe.py
++++ archive/studio-next/eval/web_probe.py
 @@ -1 +1,2 @@
 -# { "Depends": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6" }
 +# v0.3.0

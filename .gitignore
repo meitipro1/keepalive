@@ -14,3 +14,6 @@ accounts.json
 
 # Local tool settings.
 .claude/
+
+# Vercel CLI link data.
+.vercel/

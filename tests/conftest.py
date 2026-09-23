@@ -1,7 +1,7 @@
 """
 Every behavioural contract test runs once per runtime: contracts/keepalive.py on
-Studionet's py-genlayer:1jb45aa8, and contracts/studio-next/keepalive.py on
-Studio Next's py-genlayer:5jycge4q. A test id ends [studionet] or [studio-next],
+Studionet's py-genlayer:1jb45aa8, and the archived port
+archive/studio-next/contracts/keepalive.py on Studio Next's py-genlayer:5jycge4q. A test id ends [studionet] or [studio-next],
 so a defence that holds in one and not the other fails by name.
 
 The pool property tests run on the primary only: the port changes three API

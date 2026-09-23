@@ -12,7 +12,7 @@ export const dynamic = "force-dynamic";
  * touches no chain.
  *
  * What it knows beyond that comes from eval/web_probe.md, measured through
- * consensus on Studio Next: X posts do not load for validators; GitHub pull
+ * consensus on Studionet: X posts do not load for validators; GitHub pull
  * request and release pages read, but print no dates in text mode; the commits
  * API is read and condensed with every date; raw changelogs and dated blog
  * posts read well.
@@ -37,7 +37,7 @@ const MEASURED: { test: RegExp; readable: boolean; note: string }[] = [
   {
     test: /^(www\.)?(x|twitter)\.com\//i,
     readable: false,
-    note: "Not readable. Measured on Studio Next: validators could not load an X post at all. Link the work itself instead.",
+    note: "Not readable. Measured on Studionet: validators could not load an X post at all. Link the work itself instead.",
   },
   {
     test: /^(www\.)?(discord\.com|discord\.gg|t\.me|telegram\.me|figma\.com|docs\.google\.com|drive\.google\.com|notion\.so)\//i,
@@ -207,7 +207,7 @@ export async function POST(request: Request) {
         : "Almost no text. Validators would read an empty page.";
     if (readable && /^github\.com\/[^/]+\/[^/]+\/(pull|releases|issues)\//i.test(bareOf(url))) {
       note +=
-        " Measured on Studio Next: GitHub pull request and release pages print no dates in text mode, so the repo autolink or a dated changelog carries the dates.";
+        " Measured on Studionet: GitHub pull request and release pages print no dates in text mode, so the repo autolink or a dated changelog carries the dates.";
     }
     return Response.json({ readable, chars: text.length, dates, note });
   } catch (error) {
