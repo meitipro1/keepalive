@@ -1,0 +1,9 @@
+{
+  "chainId": 61999,
+  "deployedAt": "2026-09-23T14:31:34Z",
+  "explorer": "https://explorer-studio.genlayer.com",
+  "keepalive": "0x499548b74d3a2EA051f3233b1D5657327D3a0A1d",
+  "network": "studionet",
+  "rpc": "https://studio.genlayer.com/api",
+  "sourceSha256": "8d3d2b38cb2ed0f13418401436a52cbbb0b4b038202b1cf6c35e1cbb09a1d6ce"
+}

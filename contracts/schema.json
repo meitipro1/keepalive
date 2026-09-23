@@ -1,0 +1,227 @@
+{
+  "ctor": {
+    "kwparams": {},
+    "params": []
+  },
+  "methods": {
+    "check": {
+      "kwparams": {},
+      "params": [
+        [
+          "sid",
+          "int"
+        ],
+        [
+          "k",
+          "int"
+        ]
+      ],
+      "payable": false,
+      "readonly": false,
+      "ret": "null"
+    },
+    "claim": {
+      "kwparams": {},
+      "params": [
+        [
+          "sid",
+          "int"
+        ]
+      ],
+      "payable": false,
+      "readonly": false,
+      "ret": "int"
+    },
+    "close": {
+      "kwparams": {},
+      "params": [
+        [
+          "sid",
+          "int"
+        ]
+      ],
+      "payable": false,
+      "readonly": false,
+      "ret": "null"
+    },
+    "current_period": {
+      "kwparams": {},
+      "params": [
+        [
+          "sid",
+          "int"
+        ]
+      ],
+      "readonly": true,
+      "ret": "string"
+    },
+    "exit": {
+      "kwparams": {},
+      "params": [
+        [
+          "sid",
+          "int"
+        ],
+        [
+          "shares",
+          "int"
+        ]
+      ],
+      "payable": false,
+      "readonly": false,
+      "ret": "int"
+    },
+    "fund": {
+      "kwparams": {},
+      "params": [
+        [
+          "sid",
+          "int"
+        ]
+      ],
+      "payable": true,
+      "readonly": false,
+      "ret": "int"
+    },
+    "get_period": {
+      "kwparams": {},
+      "params": [
+        [
+          "sid",
+          "int"
+        ],
+        [
+          "k",
+          "int"
+        ]
+      ],
+      "readonly": true,
+      "ret": "string"
+    },
+    "get_position": {
+      "kwparams": {},
+      "params": [
+        [
+          "sid",
+          "int"
+        ],
+        [
+          "addr",
+          "string"
+        ]
+      ],
+      "readonly": true,
+      "ret": "string"
+    },
+    "get_stream": {
+      "kwparams": {},
+      "params": [
+        [
+          "sid",
+          "int"
+        ]
+      ],
+      "readonly": true,
+      "ret": "string"
+    },
+    "lapse": {
+      "kwparams": {},
+      "params": [
+        [
+          "sid",
+          "int"
+        ],
+        [
+          "k",
+          "int"
+        ]
+      ],
+      "payable": false,
+      "readonly": false,
+      "ret": "null"
+    },
+    "list_streams": {
+      "kwparams": {},
+      "params": [
+        [
+          "status",
+          "string"
+        ],
+        [
+          "offset",
+          "int"
+        ],
+        [
+          "limit",
+          "int"
+        ]
+      ],
+      "readonly": true,
+      "ret": "string"
+    },
+    "open_stream": {
+      "kwparams": {},
+      "params": [
+        [
+          "title",
+          "string"
+        ],
+        [
+          "mission",
+          "string"
+        ],
+        [
+          "sources",
+          [
+            {
+              "$rep": "string"
+            }
+          ]
+        ],
+        [
+          "period_days",
+          "int"
+        ],
+        [
+          "tranche",
+          "int"
+        ],
+        [
+          "demo",
+          "bool"
+        ]
+      ],
+      "payable": false,
+      "readonly": false,
+      "ret": "int"
+    },
+    "report": {
+      "kwparams": {},
+      "params": [
+        [
+          "sid",
+          "int"
+        ],
+        [
+          "k",
+          "int"
+        ],
+        [
+          "summary",
+          "string"
+        ],
+        [
+          "links",
+          [
+            {
+              "$rep": "string"
+            }
+          ]
+        ]
+      ],
+      "payable": false,
+      "readonly": false,
+      "ret": "null"
+    }
+  }
+}

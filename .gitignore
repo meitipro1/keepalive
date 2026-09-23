@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv*/
+node_modules/
+.next/
+out/
+.env
+.env.local
+web/tsconfig.tsbuildinfo
+web/next-env.d.ts
+# Keys never live in this repository: scripts keep them in ~/.keepalive/.
+.accounts.json
+accounts.json
+
+# Local tool settings.
+.claude/

@@ -1,0 +1,45 @@
+{
+  "deployments": {
+    "studio-next": {
+      "chain_id": 61997,
+      "deployed_at": "2026-09-23T01:58:24Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com",
+      "keepalive": "0xB636Ab2a57d6047414C1dB8D9fE5dEB6e4f993B9",
+      "keepalive_deployer": "0x6E0A4e0B5c8a0f0254bf6920a8ebB6ec70B0F9D7",
+      "keepalive_sha256": "ed861cb80f4ae9a8e7680504ef3bf7b15a302f3639af8b2feb01f706dfbf0101",
+      "keepalive_tx": "0x6273af1581b2e33ac51fa47ffbc33684cffceea3c07a0dbc2d31d7dee2a0811a",
+      "probe": "0xB750BAD18490baD35D89e414b092ed603c44918C",
+      "probe_deployer": "0x6E0A4e0B5c8a0f0254bf6920a8ebB6ec70B0F9D7",
+      "probe_sha256": "049c36c95d2d6b691fc8aaa93bcfa7fa5988c2169c7a8782103d2a62fedfe912",
+      "probe_tx": "0xc0909e9ec2f7aa7feadcaea6c7884c8ef8bd06e4d73e878b155a99b3b4ac2433",
+      "rpc": "https://studio-next.genlayer.com/api",
+      "runtime": "py-genlayer:5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",
+      "web_probe": "0xB8Bd4D65934C8b1745393fFf3C29ce07aec639E9",
+      "web_probe_deployer": "0x6E0A4e0B5c8a0f0254bf6920a8ebB6ec70B0F9D7",
+      "web_probe_sha256": "8123367e3b13e2afca0f5ef3d190ea4acb12a88cabc046c971b7a5a59e4e2422",
+      "web_probe_tx": "0x8159e52ba02d101bc8cd06eaf4be320a76fdde3b3ba7c0e8c26f317813f3ef60"
+    },
+    "studionet": {
+      "chain_id": 61999,
+      "deployed_at": "2026-09-23T14:31:34Z",
+      "explorer": "https://explorer-studio.genlayer.com",
+      "keepalive": "0x499548b74d3a2EA051f3233b1D5657327D3a0A1d",
+      "keepalive_deployer": "0x6E0A4e0B5c8a0f0254bf6920a8ebB6ec70B0F9D7",
+      "keepalive_file": "contracts/keepalive.py",
+      "keepalive_sha256": "8d3d2b38cb2ed0f13418401436a52cbbb0b4b038202b1cf6c35e1cbb09a1d6ce",
+      "keepalive_tx": "0x43bfb6c74a2f5f763f9e2c8d07e5b6b6d9409c1acc55c7bba24b38ea69fc6964",
+      "probe": "0x1E8F563c9AeAa517fdE7da485924dd4d0BaCa425",
+      "probe_deployer": "0x6E0A4e0B5c8a0f0254bf6920a8ebB6ec70B0F9D7",
+      "probe_file": "eval/probe_contract.py",
+      "probe_sha256": "b1f2cb04c18fe4a5861aec49913294c515bc7ff7df6c5f71134445998993dbef",
+      "probe_tx": "0x596ce23c3ef5ee98ce15d7e371898ca6f85d4bc65d386edc78a3f29daf8dcc30",
+      "rpc": "https://studio.genlayer.com/api",
+      "runtime": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+      "web_probe": "0x0cf56a3e1063862dC36c6DF3d62fd2adcbd319f7",
+      "web_probe_deployer": "0x6E0A4e0B5c8a0f0254bf6920a8ebB6ec70B0F9D7",
+      "web_probe_file": "eval/web_probe.py",
+      "web_probe_sha256": "95b305085742526a16dcd88d7cd94c86df3e537bc63ac529b898ea78c67696b1",
+      "web_probe_tx": "0xc29a6baf31f8bb4bb021d1cd94a3f5ec5cc43ea55877742a207d1e8ebf35674b"
+    }
+  }
+}

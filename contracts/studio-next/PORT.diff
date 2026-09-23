@@ -1,0 +1,67 @@
+# contracts/studio-next/PORT.diff, written by scripts/port.py. Do not edit it.
+#
+# The whole difference between the Studionet files (py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6)
+# and the Studio Next files (py-genlayer:5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng).
+# Every changed line is the runtime header, an import, or one of three API
+# names: gl.Contract, gl.vm.run_nondet_unsafe and gl.message_raw.
+
+--- contracts/keepalive.py
++++ contracts/studio-next/keepalive.py
+@@ -1 +1,2 @@
+-# { "Depends": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6" }
++# v0.3.0
++# { "Depends": "py-genlayer:5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng" }
+@@ -30,0 +32,2 @@
++from genlayer.storage import TreeMap, allow as allow_storage
++import genlayer as gl
+@@ -194 +197 @@
+-    gl.message_raw['datetime'] is an ISO 8601 string fixed for the transaction
++    gl.message.raw['datetime'] is an ISO 8601 string fixed for the transaction
+@@ -528 +531 @@
+-    return gl.vm.run_nondet_unsafe(leader_fn, validator_fn)
++    return gl.vm.run_nondet(leader_fn, validator_fn)
+@@ -667 +670 @@
+-class Keepalive(gl.Contract):
++class Keepalive(gl.contract.Contract):
+@@ -686 +689 @@
+-        return _seconds(gl.message_raw["datetime"])
++        return _seconds(gl.message.raw["datetime"])
+--- eval/probe_contract.py
++++ eval/studio-next/probe_contract.py
+@@ -1 +1,2 @@
+-# { "Depends": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6" }
++# v0.3.0
++# { "Depends": "py-genlayer:5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng" }
+@@ -21,0 +23,2 @@
++from genlayer.storage import TreeMap
++import genlayer as gl
+@@ -100 +103 @@
+-    gl.message_raw['datetime'] is an ISO 8601 string fixed for the transaction
++    gl.message.raw['datetime'] is an ISO 8601 string fixed for the transaction
+@@ -316 +319 @@
+-    return gl.vm.run_nondet_unsafe(leader_fn, validator_fn)
++    return gl.vm.run_nondet(leader_fn, validator_fn)
+@@ -346 +349 @@
+-class KeepaliveProbe(gl.Contract):
++class KeepaliveProbe(gl.contract.Contract):
+@@ -378 +381 @@
+-        now = _seconds(gl.message_raw["datetime"])
++        now = _seconds(gl.message.raw["datetime"])
+--- eval/web_probe.py
++++ eval/studio-next/web_probe.py
+@@ -1 +1,2 @@
+-# { "Depends": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6" }
++# v0.3.0
++# { "Depends": "py-genlayer:5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng" }
+@@ -23,0 +25,2 @@
++from genlayer.storage import TreeMap
++import genlayer as gl
+@@ -140 +143 @@
+-class WebProbe(gl.Contract):
++class WebProbe(gl.contract.Contract):
+@@ -172 +175 @@
+-        out = gl.vm.run_nondet_unsafe(leader_fn, validator_fn)
++        out = gl.vm.run_nondet(leader_fn, validator_fn)
+@@ -179 +182 @@
+-            "at": gl.message_raw["datetime"],
++            "at": gl.message.raw["datetime"],

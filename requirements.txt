@@ -1,0 +1,5 @@
+# Studionet (chain 61999), the site's network and the primary deployment.
+# genlayer-py 0.18 is the SDK line that talks to Studionet's consensus.
+genlayer-py==0.18.0
+genvm-linter==0.11.1rc2
+pytest>=8
