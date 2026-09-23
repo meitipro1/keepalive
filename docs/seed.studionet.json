@@ -1,0 +1,616 @@
+{
+  "actions": [
+    {
+      "detail": "",
+      "method": "open_stream",
+      "ok": true,
+      "sid": 1,
+      "stream": "llvm",
+      "tx": "0x68a9d0f690251a76ea69b01f180be03885ee456ead4e5b1b4ed8e48d9ae54aec"
+    },
+    {
+      "detail": "",
+      "gen": 300,
+      "method": "fund",
+      "ok": true,
+      "patron": "patron1",
+      "sid": 1,
+      "stream": "llvm",
+      "tx": "0x3a685f0671107b49bd5b6f5890fc99dcf09786e230adcb4ba0fbceca54d2540c"
+    },
+    {
+      "detail": "",
+      "gen": 200,
+      "method": "fund",
+      "ok": true,
+      "patron": "patron2",
+      "sid": 1,
+      "stream": "llvm",
+      "tx": "0xfa2e486cc06551227027974d13e8f296f74d21aad988386613301ae5b0a18086"
+    },
+    {
+      "detail": "",
+      "method": "open_stream",
+      "ok": true,
+      "sid": 2,
+      "stream": "vscode",
+      "tx": "0x85b8cd6578e68cc0d88c58decc1a7bbabf66665a64b468406accfa5cef79cad6"
+    },
+    {
+      "detail": "",
+      "gen": 150,
+      "method": "fund",
+      "ok": true,
+      "patron": "patron1",
+      "sid": 2,
+      "stream": "vscode",
+      "tx": "0x2d7232dd2d44dab353b0111cd406eb7c2ee5a95c2c4886750af2517b29b409ce"
+    },
+    {
+      "detail": "",
+      "method": "open_stream",
+      "ok": true,
+      "sid": 3,
+      "stream": "moment",
+      "tx": "0xcc36e5c9791ea2c9a6ce9ccb5aef1b5e7260481c684c6946c68dd5469b310a6c"
+    },
+    {
+      "detail": "",
+      "gen": 250,
+      "method": "fund",
+      "ok": true,
+      "patron": "patron2",
+      "sid": 3,
+      "stream": "moment",
+      "tx": "0xed227cede5e4e69b30fce5d852e7a008042f7b1449305ba8fda09801c3927db1"
+    },
+    {
+      "detail": "",
+      "method": "open_stream",
+      "ok": true,
+      "sid": 4,
+      "stream": "podcast",
+      "tx": "0x1bdc94a135e0355d5a86f3554f54e50580e1d57d4a5792a47ced8eda27910665"
+    },
+    {
+      "detail": "",
+      "gen": 100,
+      "method": "fund",
+      "ok": true,
+      "patron": "patron1",
+      "sid": 4,
+      "stream": "podcast",
+      "tx": "0x40eea67bc24529104989c73316cf05dfd7ea31ddfc760c20d8d292c8eee84879"
+    },
+    {
+      "detail": "",
+      "method": "open_stream",
+      "ok": true,
+      "sid": 5,
+      "stream": "notes",
+      "tx": "0x8937525c8fec0fc594fa4eb341ef05bfe8f104c8b2ac6ca47302caa6e7bd4d53"
+    },
+    {
+      "detail": "",
+      "gen": 50,
+      "method": "fund",
+      "ok": true,
+      "patron": "patron2",
+      "sid": 5,
+      "stream": "notes",
+      "tx": "0xed5044fc0b780e96886b5398bc67ac2181fdcdbaae56c312dfc7b6141ec03bd9"
+    },
+    {
+      "detail": "",
+      "method": "open_stream",
+      "ok": true,
+      "sid": 6,
+      "stream": "nixpkgs",
+      "tx": "0x8e0ab0d74af3b4ac6847c276d51a0d94040ad391bca28988e33d2b5fb9a35a7a"
+    },
+    {
+      "detail": "",
+      "gen": 120,
+      "method": "fund",
+      "ok": true,
+      "patron": "patron1",
+      "sid": 6,
+      "stream": "nixpkgs",
+      "tx": "0x7f66292e57750aded419d69dd440d6eedab02b5d4137071d82e468f6f8843234"
+    },
+    {
+      "detail": "",
+      "gen": 60,
+      "method": "fund",
+      "ok": true,
+      "patron": "patron2",
+      "sid": 6,
+      "stream": "nixpkgs",
+      "tx": "0xb25b541f65f7190e4392705119d59cb9440e0c5927ffa7264532811e9bf94525"
+    },
+    {
+      "detail": "",
+      "k": 0,
+      "links": [],
+      "method": "report",
+      "ok": true,
+      "sid": 1,
+      "stream": "llvm",
+      "summary": "No commits have landed on llvm/llvm-project yet this period.",
+      "tx": "0x9a235b21f3101f51ccdb7015f26301887ea519d582c72833e99f7717404ac8bb"
+    },
+    {
+      "detail": "",
+      "k": 0,
+      "links": [],
+      "method": "report",
+      "ok": true,
+      "sid": 2,
+      "stream": "vscode",
+      "summary": "No commits have landed on microsoft/vscode yet this period.",
+      "tx": "0x66b702dfc1690b308d759a26dff09cdb66c81a9cb53585af655681992cb61bc7"
+    },
+    {
+      "detail": "",
+      "k": 0,
+      "links": [],
+      "method": "report",
+      "ok": true,
+      "sid": 3,
+      "stream": "moment",
+      "summary": "Finished the parser refactor this period and moved locale loading to lazy modules.",
+      "tx": "0xe71e328ad248a4988727e7b847f50595454a91d4375d4e1d6916a31a3ad72744"
+    },
+    {
+      "detail": "",
+      "k": 0,
+      "links": [],
+      "method": "report",
+      "ok": true,
+      "sid": 4,
+      "stream": "podcast",
+      "summary": "No commits have landed on WebKit/WebKit yet this period.",
+      "tx": "0xdeda9a17aba5cad040f83b1efe1f23f315f12f31be095d0f55f8b3c324a83e96"
+    },
+    {
+      "detail": "",
+      "k": 0,
+      "links": [
+        "https://docs.google.com/document/d/1KeepaliveDemoPrivateNotes/edit"
+      ],
+      "method": "report",
+      "ok": true,
+      "sid": 5,
+      "stream": "notes",
+      "summary": "Wrote up the fee-market and appeal-bond notes in our working document this period.",
+      "tx": "0x0dc091356ed9cc96e1fa69491843b3b154baaad943899640c2528a802dcdeb86"
+    },
+    {
+      "detail": "",
+      "k": 0,
+      "links": [
+        "https://github.com/NixOS/nixpkgs/commit/9a477dd9f71c3f57b5a8bfb589909be57ca1f75b"
+      ],
+      "method": "report",
+      "ok": true,
+      "sid": 6,
+      "stream": "nixpkgs",
+      "summary": "1 commit landed on NixOS/nixpkgs so far this period, including: music-discord-rpc: remove lukaswrz from maintainers (#565995).",
+      "tx": "0x5e87fa6ceb9a7d4d6d09463f8c582d154da8a4e9b2f9593ed44ead69abf34214"
+    },
+    {
+      "detail": "",
+      "k": 0,
+      "method": "check",
+      "ok": true,
+      "sid": 1,
+      "stream": "llvm",
+      "tx": "0xddbaf40e9cb0966f23da895d3a0e8b6084cd6c3aa5005cd0824e2576c9ab35f5",
+      "verdict": "ALIVE"
+    },
+    {
+      "detail": "",
+      "gen": 25.0,
+      "method": "claim",
+      "ok": true,
+      "sid": 1,
+      "stream": "llvm",
+      "tx": "0xc187dab3c01cc8a735f2f95ea81932d2f376e99659d3160c9c8a8ab6d467aa7b"
+    },
+    {
+      "detail": "",
+      "k": 0,
+      "method": "check",
+      "ok": true,
+      "sid": 2,
+      "stream": "vscode",
+      "tx": "0xe204bdae8e0f8c185397b3582f2f3dfe274b998cb0d53951d2592664f38c9351",
+      "verdict": "QUIET"
+    },
+    {
+      "detail": "",
+      "k": 0,
+      "method": "check",
+      "ok": true,
+      "sid": 3,
+      "stream": "moment",
+      "tx": "0x89a16ca30f08fdf9ec9b6334e838e7e6525c1517f351088b73dd02be9c6651fb",
+      "verdict": "QUIET"
+    },
+    {
+      "detail": "",
+      "k": 0,
+      "method": "check",
+      "ok": true,
+      "sid": 4,
+      "stream": "podcast",
+      "tx": "0xcfc9fb596ec17f82cb14883a8fac81d99bfa6aaf08cf9c7d13e5233086719524",
+      "verdict": "QUIET"
+    },
+    {
+      "detail": "",
+      "k": 0,
+      "method": "check",
+      "ok": true,
+      "sid": 5,
+      "stream": "notes",
+      "tx": "0x59e34d7b0f00abb982b6cedae1f0426a860f06ed8fd26ad445609950362aceee",
+      "verdict": "UNREADABLE"
+    },
+    {
+      "detail": "",
+      "k": 0,
+      "method": "check",
+      "ok": true,
+      "sid": 6,
+      "stream": "nixpkgs",
+      "tx": "0x7abe457707aab06109d4b67107911dd7b9592552e5bb2382821b9b7d906a79ac",
+      "verdict": "ALIVE"
+    },
+    {
+      "detail": "",
+      "gen": 20.0,
+      "method": "claim",
+      "ok": true,
+      "sid": 6,
+      "stream": "nixpkgs",
+      "tx": "0x3b85704b42df9b9c80938f696d249930b80f4bef2e3e4fd121bf746184cec6f3"
+    },
+    {
+      "detail": "",
+      "method": "close",
+      "ok": true,
+      "sid": 6,
+      "stream": "nixpkgs",
+      "tx": "0xffb880d62d02aef30cd0064ad5d2ebed2ad8813f750bbe26293f672854def2e9"
+    },
+    {
+      "detail": "",
+      "gen": 106.66666666666667,
+      "method": "exit",
+      "ok": true,
+      "patron": "patron1",
+      "sid": 6,
+      "stream": "nixpkgs",
+      "tx": "0x6960354f8793f23fe67b823f7161fa4eb4f292513b4cfdce6dc538ec1810c1cd"
+    },
+    {
+      "detail": "",
+      "gen": 53.333333333333336,
+      "method": "exit",
+      "ok": true,
+      "patron": "patron2",
+      "sid": 6,
+      "stream": "nixpkgs",
+      "tx": "0x42bbe6bd7a5231c740984baf7d033ab0ac72548d298a443fc0427a3f1e9df0d0"
+    },
+    {
+      "detail": "",
+      "k": 1,
+      "links": [
+        "https://github.com/llvm/llvm-project/commit/0601a126c256e09faea980045ac0b787b49dfe39",
+        "https://github.com/llvm/llvm-project/commit/68d3c25ee618d057ef16cea97b34dc2b85d46118"
+      ],
+      "method": "report",
+      "ok": true,
+      "sid": 1,
+      "stream": "llvm",
+      "summary": "2 commits landed on llvm/llvm-project so far this period, including: [clang][bytecode] Short-circuit inelegible functions when compiling (#225618); [CIR] Widen memory effects for ABI argument memory (#221067).",
+      "tx": "0x1c6bf10fb3b22b42f9c19e69e403abe92751e82c80e28f74a35fce1806bb60ee"
+    },
+    {
+      "detail": "",
+      "k": 1,
+      "links": [],
+      "method": "report",
+      "ok": true,
+      "sid": 2,
+      "stream": "vscode",
+      "summary": "No commits have landed on microsoft/vscode yet this period.",
+      "tx": "0x479fad4d3bb43026305a1b892b1ca12307c857bc564fb2513bae4a520e20c57d"
+    },
+    {
+      "detail": "",
+      "k": 1,
+      "links": [
+        "https://github.com/WebKit/WebKit/commit/c2c21028eb8abc8f2bc6eea1ede6f2ccb247aafa"
+      ],
+      "method": "report",
+      "ok": true,
+      "sid": 4,
+      "stream": "podcast",
+      "summary": "Worked on these this period: [CMake] Remove unnecessary iOS warning flags.",
+      "tx": "0xd3d40a40270370b7c6fd149f8a29b6ab5f4cabdd35d61f84846563c22597e87c"
+    },
+    {
+      "detail": "",
+      "k": 1,
+      "method": "check",
+      "ok": true,
+      "sid": 1,
+      "stream": "llvm",
+      "tx": "0x33f565e3f8403bc6363ff65700c8f3d8ca1393a7a56fd72ccc6020a849adf815",
+      "verdict": "ALIVE"
+    },
+    {
+      "detail": "",
+      "gen": 25.0,
+      "method": "claim",
+      "ok": true,
+      "sid": 1,
+      "stream": "llvm",
+      "tx": "0xe7cda2bfb55de01fa9d050b1a0f6d5763b5c0785c4eea2cdc34f2927bec01a15"
+    },
+    {
+      "detail": "",
+      "k": 1,
+      "method": "check",
+      "ok": true,
+      "sid": 2,
+      "stream": "vscode",
+      "tx": "0x4913cd845be4522bcc5221c54d6cc0e100541d3f0b2add030bcecbc00efc559d",
+      "verdict": "QUIET"
+    },
+    {
+      "detail": "",
+      "k": 1,
+      "method": "check",
+      "ok": true,
+      "sid": 4,
+      "stream": "podcast",
+      "tx": "0xa4b5373aa33488bcc8f4c74f7233068786448e04fc1c88f67cf2879a52adb4b2",
+      "verdict": "OFF_MISSION"
+    },
+    {
+      "detail": "",
+      "k": 0,
+      "method": "check",
+      "ok": true,
+      "sid": 5,
+      "stream": "notes",
+      "tx": "0x57252d9964dc9c1d91708f236c0745bb861bd0f884834dfab0de00958ca6877d",
+      "verdict": "UNREADABLE"
+    },
+    {
+      "detail": "",
+      "k": 1,
+      "method": "lapse",
+      "ok": true,
+      "sid": 3,
+      "stream": "moment",
+      "tx": "0xac07f7bc786562cda73edc37d11e8802736b9dbd9fb0836be5b1a1fa9e985d5b",
+      "verdict": "LAPSED"
+    },
+    {
+      "detail": "",
+      "method": "exit",
+      "note": "half the position, leaving the rest to show a paused holding",
+      "ok": true,
+      "patron": "patron2",
+      "sid": 3,
+      "stream": "moment",
+      "tx": "0x81e4907db75f47b2ca6b952fd068bba5132f9b7ee40b82a7bc8a5e235b1c094f"
+    },
+    {
+      "detail": "",
+      "k": 2,
+      "links": [
+        "https://github.com/llvm/llvm-project/commit/93236c1e0296ff92f04b38d37ae927673be9f536",
+        "https://github.com/llvm/llvm-project/commit/a4ebc09e5b3337c24cad8cb65e88e8af7977aaf1",
+        "https://github.com/llvm/llvm-project/commit/2711c15ebeda051a6b3f974c217bb50fdf3bfce2"
+      ],
+      "method": "report",
+      "ok": true,
+      "sid": 1,
+      "stream": "llvm",
+      "summary": "3 commits landed on llvm/llvm-project so far this period, including: [JITLink] Support AArch64 big-endian (BE8) ELF objects (#225120); [CIR] Fixup tests after GEP type changed (#225770); [clang][bytecode] Add a CheckLoad overload taking a PtrView (#225741).",
+      "tx": "0x37b790f38f93992cc8098cd43e325173243a520543e575bf675c4987b4633f77"
+    },
+    {
+      "detail": "",
+      "k": 2,
+      "links": [
+        "https://github.com/microsoft/vscode/commit/fca02f7365f93a812dd690f98c5613ccd6b0111a",
+        "https://github.com/microsoft/vscode/commit/7f298de14fd1a9ce798e07d5bdbb1d2d82ca6ea7"
+      ],
+      "method": "report",
+      "ok": true,
+      "sid": 2,
+      "stream": "vscode",
+      "summary": "2 commits landed on microsoft/vscode so far this period, including: sessions: keep sticky header attached during relayout (#337459); Merge pull request #337379 from microsoft/connor4312/plugin-discovery-shadowing.",
+      "tx": "0xfd6dfd8fd0b58ebeb0f81701acdf16f2ec2911c577b8ac1d5ce795bc670c7951"
+    },
+    {
+      "detail": "",
+      "k": 2,
+      "links": [
+        "https://github.com/WebKit/WebKit/commit/10a8332b70f2bd0d05100a35f4ed4385f25df7aa"
+      ],
+      "method": "report",
+      "ok": true,
+      "sid": 4,
+      "stream": "podcast",
+      "summary": "Worked on these this period: Move AnnexB utilities to a specific file.",
+      "tx": "0x4f3f5941faafaa770478fe38500e3912b126b00ddffaeb8582ada98d9993deb6"
+    },
+    {
+      "detail": "",
+      "k": 2,
+      "method": "check",
+      "ok": true,
+      "sid": 1,
+      "stream": "llvm",
+      "tx": "0x0d20a27072747eb7c963c69f560997c99fad3326e531348de3f6161a106257b2",
+      "verdict": "ALIVE"
+    },
+    {
+      "detail": "",
+      "gen": 25.0,
+      "method": "claim",
+      "ok": true,
+      "sid": 1,
+      "stream": "llvm",
+      "tx": "0x3c4fdc4621b7e8137d27778dda77f1d8977308968c18afe1b50d6ff9c335d8d9"
+    },
+    {
+      "detail": "",
+      "k": 2,
+      "method": "check",
+      "ok": true,
+      "sid": 2,
+      "stream": "vscode",
+      "tx": "0xf842a4e24f9587edf0c6eb9bf63e857db382f3777d9f4fa53543ac0fdbee80e1",
+      "verdict": "ALIVE"
+    },
+    {
+      "detail": "",
+      "k": 2,
+      "method": "check",
+      "ok": true,
+      "sid": 4,
+      "stream": "podcast",
+      "tx": "0xfd9601c191df193c21b850b70532c6d87d717dd855387dc5c5df4c26d2ffa522",
+      "verdict": "OFF_MISSION"
+    },
+    {
+      "detail": "",
+      "k": 3,
+      "links": [
+        "https://github.com/microsoft/vscode/commit/5e364aac8b44b9e748fcc9ef406e3dc027570935"
+      ],
+      "method": "report",
+      "ok": true,
+      "sid": 2,
+      "stream": "vscode",
+      "summary": "1 commit landed on microsoft/vscode so far this period, including: agents: feat: add enhanced response selection actions to Agents Window (#337472).",
+      "tx": "0x8f95fb966e68ccd3a1898f4cb3a0c882010295e0cdc1591fc8195efd78f8c2d6"
+    },
+    {
+      "detail": "",
+      "k": 3,
+      "links": [],
+      "method": "report",
+      "ok": true,
+      "sid": 4,
+      "stream": "podcast",
+      "summary": "No commits have landed on WebKit/WebKit yet this period.",
+      "tx": "0x8d8dff608f2d7f69617f4c8642cd1f90939296157326dc4fb45e6db260ecd0ae"
+    },
+    {
+      "detail": "",
+      "k": 3,
+      "method": "lapse",
+      "ok": true,
+      "sid": 1,
+      "stream": "llvm",
+      "tx": "0xfa010ed0f656283778bed7f976aff828877bb06c9d52db49215e6490f843d300",
+      "verdict": "LAPSED"
+    },
+    {
+      "detail": "",
+      "k": 3,
+      "method": "check",
+      "ok": true,
+      "sid": 2,
+      "stream": "vscode",
+      "tx": "0xc2f2e0751a3b76bb6e4f1b6a570dd2ff2ef0e2461359e0b439662cb31e5493d9",
+      "verdict": "ALIVE"
+    },
+    {
+      "detail": "",
+      "gen": 20.0,
+      "method": "claim",
+      "ok": true,
+      "sid": 2,
+      "stream": "vscode",
+      "tx": "0xe3f48d6321988c1969cc744b01cac98ab1d3b7fc4f02ec4b286253d0df9b5a92"
+    },
+    {
+      "detail": "",
+      "k": 3,
+      "method": "check",
+      "ok": true,
+      "sid": 4,
+      "stream": "podcast",
+      "tx": "0x4282a7bf807d94bbbdf7ec9c98e61e5239277feeeb81013781f6c3a856d26b9e",
+      "verdict": "QUIET"
+    },
+    {
+      "detail": "",
+      "k": 4,
+      "method": "lapse",
+      "ok": true,
+      "sid": 1,
+      "stream": "llvm",
+      "tx": "0x01f2c55ddf96a66c7e4c854444c18baacde76a701e75b3eda2ccd23b94317f83",
+      "verdict": "LAPSED"
+    },
+    {
+      "detail": "",
+      "k": 4,
+      "method": "lapse",
+      "ok": true,
+      "sid": 2,
+      "stream": "vscode",
+      "tx": "0xd105deff6359b0c887bf861b9f757fbdbb97f1fdeea9169f7a44896c3f9bfe56",
+      "verdict": "LAPSED"
+    },
+    {
+      "detail": "",
+      "k": 4,
+      "method": "lapse",
+      "ok": true,
+      "sid": 4,
+      "stream": "podcast",
+      "tx": "0xb897fd2b42ab731c7ef1b6d33f97e3b107fc53333e2c527efc33cb02d6844813",
+      "verdict": "LAPSED"
+    }
+  ],
+  "contract": "0x499548b74d3a2EA051f3233b1D5657327D3a0A1d",
+  "streams": {
+    "llvm": {
+      "sid": 1,
+      "start": 1790174021
+    },
+    "moment": {
+      "sid": 3,
+      "start": 1790174082
+    },
+    "nixpkgs": {
+      "sid": 6,
+      "start": 1790174130
+    },
+    "notes": {
+      "sid": 5,
+      "start": 1790174114
+    },
+    "podcast": {
+      "sid": 4,
+      "start": 1790174098
+    },
+    "vscode": {
+      "sid": 2,
+      "start": 1790174057
+    }
+  }
+}

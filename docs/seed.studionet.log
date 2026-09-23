@@ -1,0 +1,129 @@
+contract 0x499548b74d3a2EA051f3233b1D5657327D3a0A1d
+  sim_fundAccount answered sim_fundAccount failed (code=-32603): '<=' not supported between instances of 's, reading the balance instead
+  0x83a6aABE 0.00 -> 1000.00 GEN
+  sim_fundAccount answered sim_fundAccount failed (code=-32603): '<=' not supported between instances of 's, reading the balance instead
+  0xb9Faa00e 0.00 -> 1000.00 GEN
+  sim_fundAccount answered sim_fundAccount failed (code=-32603): '<=' not supported between instances of 's, reading the balance instead
+  0x0AA7c617 0.00 -> 1000.00 GEN
+  sim_fundAccount answered sim_fundAccount failed (code=-32603): '<=' not supported between instances of 's, reading the balance instead
+  0x36aaAb19 0.00 -> 1000.00 GEN
+  sim_fundAccount answered sim_fundAccount failed (code=-32603): '<=' not supported between instances of 's, reading the balance instead
+  0xaCDFC18C 0.00 -> 1000.00 GEN
+  sim_fundAccount answered sim_fundAccount failed (code=-32603): '<=' not supported between instances of 's, reading the balance instead
+  0x8C63cE50 0.00 -> 1000.00 GEN
+  open_stream 0x68a9d0f690251a76ea69b01f180be03885ee456ead4e5b1b4ed8e48d9ae54aec
+  opened LLVM mainline as stream 1
+  fund 0x3a685f0671107b49bd5b6f5890fc99dcf09786e230adcb4ba0fbceca54d2540c
+    patron1 funded 300 GEN: ok
+  fund 0xfa2e486cc06551227027974d13e8f296f74d21aad988386613301ae5b0a18086
+    patron2 funded 200 GEN: ok
+  open_stream 0x85b8cd6578e68cc0d88c58decc1a7bbabf66665a64b468406accfa5cef79cad6
+  opened VS Code mainline as stream 2
+  fund 0x2d7232dd2d44dab353b0111cd406eb7c2ee5a95c2c4886750af2517b29b409ce
+    patron1 funded 150 GEN: ok
+  open_stream 0xcc36e5c9791ea2c9a6ce9ccb5aef1b5e7260481c684c6946c68dd5469b310a6c
+  opened Moment.js refactor as stream 3
+  fund 0xed227cede5e4e69b30fce5d852e7a008042f7b1449305ba8fda09801c3927db1
+    patron2 funded 250 GEN: ok
+  open_stream 0x1bdc94a135e0355d5a86f3554f54e50580e1d57d4a5792a47ced8eda27910665
+  opened Indie dev interviews as stream 4
+  fund 0x40eea67bc24529104989c73316cf05dfd7ea31ddfc760c20d8d292c8eee84879
+    patron1 funded 100 GEN: ok
+  open_stream 0x8937525c8fec0fc594fa4eb341ef05bfe8f104c8b2ac6ca47302caa6e7bd4d53
+  opened Fee market notes as stream 5
+  fund 0xed5044fc0b780e96886b5398bc67ac2181fdcdbaae56c312dfc7b6141ec03bd9
+    patron2 funded 50 GEN: ok
+  open_stream 0x8e0ab0d74af3b4ac6847c276d51a0d94040ad391bca28988e33d2b5fb9a35a7a
+  opened nixpkgs upkeep as stream 6
+  fund 0x7f66292e57750aded419d69dd440d6eedab02b5d4137071d82e468f6f8843234
+    patron1 funded 120 GEN: ok
+  fund 0xb25b541f65f7190e4392705119d59cb9440e0c5927ffa7264532811e9bf94525
+    patron2 funded 60 GEN: ok
+  report 0x9a235b21f3101f51ccdb7015f26301887ea519d582c72833e99f7717404ac8bb
+  LLVM mainline period 1 reported: ok
+  report 0x66b702dfc1690b308d759a26dff09cdb66c81a9cb53585af655681992cb61bc7
+  VS Code mainline period 1 reported: ok
+  report 0xe71e328ad248a4988727e7b847f50595454a91d4375d4e1d6916a31a3ad72744
+  Moment.js refactor period 1 reported: ok
+  report 0xdeda9a17aba5cad040f83b1efe1f23f315f12f31be095d0f55f8b3c324a83e96
+  Indie dev interviews period 1 reported: ok
+  report 0x0dc091356ed9cc96e1fa69491843b3b154baaad943899640c2528a802dcdeb86
+  Fee market notes period 1 reported: ok
+  report 0x5e87fa6ceb9a7d4d6d09463f8c582d154da8a4e9b2f9593ed44ead69abf34214
+  nixpkgs upkeep period 1 reported: ok
+  check 0xddbaf40e9cb0966f23da895d3a0e8b6084cd6c3aa5005cd0824e2576c9ab35f5
+  stream 1 period 1: check -> ALIVE: A llvm/llvm-project commit landed at 2026-09-23T14:43:33Z: AMDGPU codegen work, which is on-mission and inside the period.
+  claim 0xc187dab3c01cc8a735f2f95ea81932d2f376e99659d3160c9c8a8ab6d467aa7b
+  LLVM mainline: builder claimed 25.0 GEN: ok
+  check 0xe204bdae8e0f8c185397b3582f2f3dfe274b998cb0d53951d2592664f38c9351
+  stream 2 period 1: check -> QUIET: GitHub evidence shows no commits landed in microsoft/vscode during the checked period, matching the report.
+  check 0x89a16ca30f08fdf9ec9b6334e838e7e6525c1517f351088b73dd02be9c6651fb
+  stream 3 period 1: check -> QUIET: No commits were made between 14:34:42Z and 14:44:42Z, so no evidence of work on the Moment.js mission during this period.
+  check 0xcfc9fb596ec17f82cb14883a8fac81d99bfa6aaf08cf9c7d13e5233086719524
+  stream 4 period 1: check -> QUIET: Evidence confirms zero WebKit commits; no mission-related podcast work shown in period.
+  check 0x59e34d7b0f00abb982b6cedae1f0426a860f06ed8fd26ad445609950362aceee
+  stream 5 period 1: check -> UNREADABLE: The only linked evidence could not be fetched, so there is no readable content to verify work during the period.
+  check 0x7abe457707aab06109d4b67107911dd7b9592552e5bb2382821b9b7d906a79ac
+  stream 6 period 1: check -> ALIVE: The evidence shows one on-mission commit (maintainer removal) dated within the period.
+  claim 0x3b85704b42df9b9c80938f696d249930b80f4bef2e3e4fd121bf746184cec6f3
+  nixpkgs upkeep: builder claimed 20.0 GEN: ok
+  close 0xffb880d62d02aef30cd0064ad5d2ebed2ad8813f750bbe26293f672854def2e9
+  nixpkgs upkeep: closed: ok
+  exit 0x6960354f8793f23fe67b823f7161fa4eb4f292513b4cfdce6dc538ec1810c1cd
+    patron1 exited with 106.66666666666667 GEN: ok
+  exit 0x42bbe6bd7a5231c740984baf7d033ab0ac72548d298a443fc0427a3f1e9df0d0
+    patron2 exited with 53.333333333333336 GEN: ok
+  report 0x1c6bf10fb3b22b42f9c19e69e403abe92751e82c80e28f74a35fce1806bb60ee
+  LLVM mainline period 2 reported: ok
+  report 0x479fad4d3bb43026305a1b892b1ca12307c857bc564fb2513bae4a520e20c57d
+  VS Code mainline period 2 reported: ok
+  report 0xd3d40a40270370b7c6fd149f8a29b6ab5f4cabdd35d61f84846563c22597e87c
+  Indie dev interviews period 2 reported: ok
+  check 0x33f565e3f8403bc6363ff65700c8f3d8ca1393a7a56fd72ccc6020a849adf815
+  stream 1 period 2: check -> ALIVE: Two commits landed in llvm/llvm-project during the period, matching the report: one optimizing bytecode compilation and another widening memory effects in CIR for ABI argument handling.
+  claim 0xe7cda2bfb55de01fa9d050b1a0f6d5763b5c0785c4eea2cdc34f2927bec01a15
+  LLVM mainline: builder claimed 25.0 GEN: ok
+  check 0x4913cd845be4522bcc5221c54d6cc0e100541d3f0b2add030bcecbc00efc559d
+  stream 2 period 2: check -> QUIET: No commits landed in microsoft/vscode during the period; both the report and evidence confirm zero activity.
+  check 0xa4b5373aa33488bcc8f4c74f7233068786448e04fc1c88f67cf2879a52adb4b2
+  stream 4 period 2: check -> OFF_MISSION: The evidence shows a commit to the WebKit repository regarding iOS build flags, which is unrelated to the mission of producing a podcast about independent game developers.
+  check 0x57252d9964dc9c1d91708f236c0745bb861bd0f884834dfab0de00958ca6877d
+  stream 5 period 1: check -> UNREADABLE: The only linked evidence could not be fetched, so no work can be verified.
+  lapse 0xac07f7bc786562cda73edc37d11e8802736b9dbd9fb0836be5b1a1fa9e985d5b
+  stream 3 period 2: lapse -> LAPSED: No report by the end of grace.
+  exit 0x81e4907db75f47b2ca6b952fd068bba5132f9b7ee40b82a7bc8a5e235b1c094f
+    patron2 took half out of the paused stream: ok
+  report 0x37b790f38f93992cc8098cd43e325173243a520543e575bf675c4987b4633f77
+  LLVM mainline period 3 reported: ok
+  report 0xfd6dfd8fd0b58ebeb0f81701acdf16f2ec2911c577b8ac1d5ce795bc670c7951
+  VS Code mainline period 3 reported: ok
+  report 0x4f3f5941faafaa770478fe38500e3912b126b00ddffaeb8582ada98d9993deb6
+  Indie dev interviews period 3 reported: ok
+  check 0x0d20a27072747eb7c963c69f560997c99fad3326e531348de3f6161a106257b2
+  stream 1 period 3: check -> ALIVE: Evidence shows 3 llvm/llvm-project commits in the period (14:57, 14:58, 14:59 UTC) on JITLink, CIR tests, and clang bytecode, all on-mission.
+  claim 0x3c4fdc4621b7e8137d27778dda77f1d8977308968c18afe1b50d6ff9c335d8d9
+  LLVM mainline: builder claimed 25.0 GEN: ok
+  check 0xf842a4e24f9587edf0c6eb9bf63e857db382f3777d9f4fa53543ac0fdbee80e1
+  stream 2 period 3: check -> ALIVE: Evidence shows 2 on-mission vscode commits within the period: sessions sticky-header relayout fix at 14:57:16Z and plugin discovery merge at 14:56:16Z.
+  check 0xfd9601c191df193c21b850b70532c6d87d717dd855387dc5c5df4c26d2ffa522
+  stream 4 period 3: check -> OFF_MISSION: Evidence shows a WebKit code commit at 2026-09-23T14:59:09Z, real work in the period but unrelated to producing a weekly indie game developer podcast.
+  report 0x8f95fb966e68ccd3a1898f4cb3a0c882010295e0cdc1591fc8195efd78f8c2d6
+  VS Code mainline period 4 reported: ok
+  report 0x8d8dff608f2d7f69617f4c8642cd1f90939296157326dc4fb45e6db260ecd0ae
+  Indie dev interviews period 4 reported: ok
+  lapse 0xfa010ed0f656283778bed7f976aff828877bb06c9d52db49215e6490f843d300
+  stream 1 period 4: lapse -> LAPSED: No report by the end of grace.
+  check 0xc2f2e0751a3b76bb6e4f1b6a570dd2ff2ef0e2461359e0b439662cb31e5493d9
+  stream 2 period 4: check -> ALIVE: Commit 5e364aa landed within the period, adding enhanced response selection actions to the Agents Window in microsoft/vscode, which aligns with the mission.
+  claim 0xe3f48d6321988c1969cc744b01cac98ab1d3b7fc4f02ec4b286253d0df9b5a92
+  VS Code mainline: builder claimed 20.0 GEN: ok
+  check 0x4282a7bf807d94bbbdf7ec9c98e61e5239277feeeb81013781f6c3a856d26b9e
+  stream 4 period 4: check -> QUIET: The evidence shows no commits or any other work during the period, matching the report's claim of no activity; no podcast-related work is shown.
+  lapse 0x01f2c55ddf96a66c7e4c854444c18baacde76a701e75b3eda2ccd23b94317f83
+  stream 1 period 5: lapse -> LAPSED: No report by the end of grace.
+  lapse 0xd105deff6359b0c887bf861b9f757fbdbb97f1fdeea9169f7a44896c3f9bfe56
+  stream 2 period 5: lapse -> LAPSED: No report by the end of grace.
+  lapse 0xb897fd2b42ab731c7ef1b6d33f97e3b107fc53333e2c527efc33cb02d6844813
+  stream 4 period 5: lapse -> LAPSED: No report by the end of grace.
+seed finished; docs/seed.<network>.json holds every transaction
+exit=0

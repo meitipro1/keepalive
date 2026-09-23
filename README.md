@@ -152,7 +152,13 @@ reports are deliberately unbacked, to show the refusals: a Moment.js stream clai
 (QUIET, then a lapse, then paused) and a podcast stream links browser-engine commits (OFF_MISSION). Every transaction
 is in [`docs/seed.studionet.json`](docs/seed.studionet.json).
 
-<!-- SEED_SUMMARY -->
+What the seed put on Studionet, all through consensus and with no failed transaction: six streams, 15 checks
+(6 ALIVE, 5 QUIET, 2 OFF_MISSION, 2 UNREADABLE), 5 lapses, 5 builder claims paid out, 3 patron exits paid out and one
+stream closed. The Moment.js stream went QUIET and then lapsed, which paused it, and a patron then took half their
+position out of the paused stream. The private-document stream read UNREADABLE twice, the recheck included, with no
+strike. Two things the record shows that were not planned: LLVM mainline's fourth period went unreported because the
+seed driver was busy running checks and moved past its report window, so the keeper recorded a lapse, which is what
+the contract is for; and the live streams' fifth periods lapsed after the driver stopped reporting.
 
 ## Tests
 
@@ -170,6 +176,9 @@ KEEPALIVE_INTEGRATION=1 pytest tests/test_integration.py -v -s   # against the l
   reason; money leaves only through `claim` and `exit`; the rubric is the spec's word for word; every prompt value is
   fenced or owned by the contract; no floats, no raw storage types; the generated files match their generators.
 - `tests/test_web_parity.py`: the site's copy of the source and link rules gives the contract's answers.
+- `web/scripts/wallet-path-check.mjs`: the site's own write path, genlayer-js 1.x signing through an EIP-1193 wallet
+  provider, run against Studionet. Measured: a 1 GEN `fund` and the matching `exit` were both accepted, and the payout
+  arrived at finality with exactly 1 wei less than was put in, the rounding the pool math promises.
 - [`docs/MUTATIONS.md`](docs/MUTATIONS.md): 36 of 36 mutants killed, each by name.
 - [`docs/RULES.md`](docs/RULES.md): the twenty rules from past rejections, and what this repository does about each.
 
