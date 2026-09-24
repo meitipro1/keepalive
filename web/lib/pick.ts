@@ -1,10 +1,20 @@
 import type { StreamRow } from "./types";
 
-/** The stream the hero shows: the longest record of alive periods, a real stream before a DEMO one on a tie. */
+/**
+ * The stream the hero shows: an open stream before a paused one, then the
+ * longest record of alive periods, then a real stream before a DEMO one.
+ */
 export function heroStream(rows: StreamRow[]): StreamRow | undefined {
   return [...rows]
     .filter((row) => row.status !== "CLOSED")
-    .sort((a, b) => b.alive - a.alive || Number(a.demo) - Number(b.demo) || b.periods - a.periods || b.sid - a.sid)[0];
+    .sort(
+      (a, b) =>
+        Number(b.status === "ACTIVE") - Number(a.status === "ACTIVE") ||
+        b.alive - a.alive ||
+        Number(a.demo) - Number(b.demo) ||
+        b.periods - a.periods ||
+        b.sid - a.sid,
+    )[0];
 }
 
 /** The latest resolved period of every stream, newest first: ALIVE, QUIET, OFF MISSION and lapses alike. */

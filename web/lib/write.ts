@@ -142,6 +142,22 @@ function statusOf(receipt: any): string {
   return code === 5 ? "ACCEPTED" : code === 7 ? "FINALIZED" : String(receipt?.status ?? "").toUpperCase();
 }
 
+/**
+ * After a decided write: drop the site's cached reads for that stream, so the
+ * next render shows the writer the result of their own transaction.
+ */
+export async function refreshReads(sid?: number): Promise<void> {
+  try {
+    await fetch("/api/refresh", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sid: sid ?? 0 }),
+    });
+  } catch {
+    // the cache expires on its own within twenty seconds
+  }
+}
+
 /** Turn a wallet or network error into one sentence a person can act on. */
 export function explain(error: unknown): string {
   const text = String((error as any)?.shortMessage ?? (error as any)?.message ?? error);

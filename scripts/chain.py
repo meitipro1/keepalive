@@ -310,7 +310,10 @@ def _reader():
 class Chain:
     def __init__(self, account=None) -> None:
         self.account = account
-        self.client = create_client(chain=CHAIN, account=account)
+        # genlayer-py 0.18 reads through the client's own account and fails
+        # without one, so a read-only Chain gets the throwaway reader. Writes
+        # still refuse to run without a real account: see _guarded.
+        self.client = create_client(chain=CHAIN, account=account or _reader())
 
     # -- accounts ----------------------------------------------------------
 

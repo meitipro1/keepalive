@@ -12,7 +12,7 @@ import { useCallback, useEffect, useState } from "react";
 
 import { gen, left, parseGen, when } from "@/lib/format";
 import type { Current, Position, StreamDetail } from "@/lib/types";
-import { send, type TxState } from "@/lib/write";
+import { refreshReads, send, type TxState } from "@/lib/write";
 import { TxLine, WriteGate } from "./Tx";
 import { useWallet } from "./Wallet";
 
@@ -47,6 +47,7 @@ export function PositionPanel({ stream }: { stream: StreamDetail }) {
     const done = await send(w.address, method, args, value, setTx);
     if (done.phase === "decided") {
       setAmount("");
+      await refreshReads(stream.sid);
       await w.refresh();
       await load();
       router.refresh();
@@ -157,7 +158,10 @@ export function CheckPanel({ stream, current }: { stream: StreamDetail; current:
   async function run(method: "check" | "lapse") {
     if (!w.address) return;
     const done = await send(w.address, method, [stream.sid, pending.k], 0n, setTx);
-    if (done.phase === "decided" || done.phase === "refused") router.refresh();
+    if (done.phase === "decided" || done.phase === "refused") {
+      await refreshReads(stream.sid);
+      router.refresh();
+    }
   }
 
   let text: string;

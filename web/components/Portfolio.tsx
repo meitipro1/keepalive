@@ -5,7 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 
 import { gen, span, when } from "@/lib/format";
 import type { Portfolio as Folio } from "@/lib/types";
-import { send, type TxState } from "@/lib/write";
+import { refreshReads, send, type TxState } from "@/lib/write";
 import { PulseStrip } from "./Pulse";
 import { Seal } from "./Seal";
 import { TxLine, WriteGate } from "./Tx";
@@ -40,6 +40,7 @@ export function Portfolio() {
     if (!w.address) return;
     const done = await send(w.address, "exit", [sid, BigInt(shares)], 0n, setTx);
     if (done.phase === "decided") {
+      await refreshReads(sid);
       await w.refresh();
       await load();
     }

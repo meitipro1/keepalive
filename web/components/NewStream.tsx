@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { gen, parseGen } from "@/lib/format";
 import { testReadable, type Readability } from "@/lib/readable";
 import { normaliseSource } from "@/lib/sources";
-import { send, type TxState } from "@/lib/write";
+import { refreshReads, send, type TxState } from "@/lib/write";
 import { TxLine, WriteGate } from "./Tx";
 import { useWallet } from "./Wallet";
 
@@ -93,6 +93,7 @@ export function NewStream() {
       setTx,
     );
     if (done.phase === "decided") {
+      await refreshReads();
       const sid = Number(done.result);
       if (Number.isInteger(sid) && sid > 0) router.push(`/s/${sid}`);
       else router.push("/streams");

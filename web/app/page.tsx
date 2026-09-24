@@ -7,7 +7,8 @@ import { StreamCard } from "@/components/StreamCard";
 import { CHAIN_HEX, DEPLOYMENT, NETWORK_NAME, NETWORK_SHORT } from "@/lib/deployment";
 import { when } from "@/lib/format";
 import { featured, heroStream, recentChecks } from "@/lib/pick";
-import { attempt, listStreams } from "@/lib/read";
+import { hasRecord } from "@/lib/pulse";
+import { attempt, getStream, listStreams, resolvedRecord } from "@/lib/read";
 
 export const dynamic = "force-dynamic";
 
@@ -38,6 +39,13 @@ export default async function Landing() {
   const read = await attempt(() => listStreams("", 0, 50));
   const rows = read.ok ? read.data.rows : [];
   const hero = heroStream(rows);
+  // The hero's full history, so its strip can reach back past the last twelve periods.
+  const heroDetail = hero ? await attempt(() => getStream(hero.sid)) : null;
+  // A DEMO stream whose recent window is all unreported: read its resolved periods instead.
+  const heroRecord =
+    hero && heroDetail?.ok && !hasRecord(heroDetail.data.history) && hero.next_k > 0
+      ? await attempt(() => resolvedRecord(hero.sid, hero.next_k))
+      : null;
   const recent = recentChecks(rows);
   const cards = featured(rows);
 
@@ -66,7 +74,11 @@ export default async function Landing() {
           </div>
           <div>
             {hero ? (
-              <HeroStream stream={hero} />
+              <HeroStream
+                stream={hero}
+                detail={heroDetail?.ok ? heroDetail.data : undefined}
+                record={heroRecord?.ok ? heroRecord.data : undefined}
+              />
             ) : (
               <div className="panel stack">
                 <span className="label">Live</span>

@@ -7,8 +7,10 @@ import { StatusChips } from "@/components/Seal";
 import { CheckPanel, PositionPanel } from "@/components/StreamLive";
 import { addressUrl } from "@/lib/deployment";
 import { day, gen, initials, short, span, when } from "@/lib/format";
-import { attempt, currentPeriod, getStream } from "@/lib/read";
+import { hasRecord, trimmed } from "@/lib/pulse";
+import { attempt, currentPeriod, getStream, resolvedRecord } from "@/lib/read";
 import { githubRepo } from "@/lib/sources";
+import type { PeriodRow } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
 
@@ -37,6 +39,24 @@ export default async function StreamPage({ params }: { params: Promise<{ id: str
   const judged = stream.alive + stream.quiet + stream.off_mission + stream.unreadable + stream.lapsed;
   const repo = githubRepo(stream.sources, []);
   const ownerOnly = stream.sources.some((s) => s.startsWith("github.com/")) && !repo;
+
+  // A DEMO stream keeps ticking every ten minutes after its builder stops, so
+  // its recent window can hold nothing but unreported periods. Then the page
+  // reads the resolved periods themselves and counts the rest in words.
+  const recentHasRecord = stream.recent_periods.some((p) => p.status !== "");
+  let record: PeriodRow[] = [];
+  if (!hasRecord(stream.history) && !recentHasRecord && stream.next_k > 0) {
+    const read = await attempt(() => resolvedRecord(sid, stream.next_k));
+    if (read.ok) record = read.data;
+  }
+  const historyFirstK = Math.max(0, stream.current_k - stream.history.length + 1);
+  const strip = record.length
+    ? { cells: record.map((p) => p.cell).join(""), firstK: record[0].k, unreported: stream.current_k - record[record.length - 1].k }
+    : (() => {
+        const t = trimmed(stream.history);
+        return { cells: t.shown, firstK: historyFirstK, unreported: t.unreported };
+      })();
+  const feed = record.length ? [...record].reverse() : stream.recent_periods;
 
   return (
     <section style={{ padding: "40px 0 72px" }}>
@@ -109,14 +129,21 @@ export default async function StreamPage({ params }: { params: Promise<{ id: str
             </div>
 
             <div className="panel stack">
-              <PulseStrip cells={stream.history} firstNumber={Math.max(1, stream.current_k - stream.history.length + 2)} size="lg" />
+              <PulseStrip cells={strip.cells} firstNumber={strip.firstK + 1} size="lg" />
               <div className="row" style={{ justifyContent: "space-between" }}>
                 <span className="label">
-                  P{Math.max(1, stream.current_k - stream.history.length + 2)}{" "}
-                  {day(stream.start + Math.max(0, stream.current_k - stream.history.length + 1) * stream.period_s)}
+                  P{strip.firstK + 1} {day(stream.start + strip.firstK * stream.period_s)}
                 </span>
-                <span className="label">P{stream.current_k + 1} now</span>
+                <span className="label">
+                  {strip.unreported ? `P${strip.firstK + strip.cells.length}` : `P${stream.current_k + 1} now`}
+                </span>
               </div>
+              {strip.unreported ? (
+                <span className="hint">
+                  Then {strip.unreported} period{strip.unreported === 1 ? "" : "s"} with no report, up to period {stream.current_k + 1} now.
+                  Anyone may record each as a lapse once its grace is over.
+                </span>
+              ) : null}
               <PulseLegend cells="AQOULRPC" />
             </div>
 
@@ -128,11 +155,21 @@ export default async function StreamPage({ params }: { params: Promise<{ id: str
                 </Link>
               </div>
               <div className="feed">
-                {stream.recent_periods.map((period) => (
+                {record.length ? (
+                  <article className="stack" style={{ gap: 6 }}>
+                    <strong style={{ fontWeight: 600 }}>
+                      Periods {record[record.length - 1].k + 2} to {stream.current_k + 1}
+                    </strong>
+                    <span className="hint">No report was posted. The builder stopped reporting after period {record[record.length - 1].k + 1}.</span>
+                  </article>
+                ) : null}
+                {feed.map((period) => (
                   <PeriodItem key={period.k} stream={stream} period={period} now={stream.now} />
                 ))}
               </div>
-              {stream.current_k + 1 > stream.recent_periods.length ? (
+              {record.length ? (
+                <span className="hint">Showing the {record.length} periods that have a record, newest first.</span>
+              ) : stream.current_k + 1 > stream.recent_periods.length ? (
                 <span className="hint">The feed shows the latest {stream.recent_periods.length} periods.</span>
               ) : null}
             </div>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { gen, initials, span } from "@/lib/format";
+import { hasRecord } from "@/lib/pulse";
 import type { StreamRow } from "@/lib/types";
 import { PulseStrip } from "./Pulse";
 import { StatusChips } from "./Seal";
@@ -24,6 +25,12 @@ export function StreamCard({ stream }: { stream: StreamRow }) {
         {stream.mission}
       </p>
       <PulseStrip cells={stream.pulse} firstNumber={Math.max(1, first)} />
+      {!hasRecord(stream.pulse) && stream.last.verdict ? (
+        <span className="hint">
+          No report in the last {stream.pulse.length} periods. Last verdict {stream.last.verdict.replace("_", " ")}, period{" "}
+          {stream.last.k + 1}.
+        </span>
+      ) : null}
       <div className="row" style={{ gap: "6px 18px", fontSize: 13.5 }}>
         <span>
           <span className="amount">{gen(stream.pool, 0)}</span> <span className="muted">pool</span>

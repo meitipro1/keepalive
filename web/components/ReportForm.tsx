@@ -7,7 +7,7 @@ import { gen, left, short, when } from "@/lib/format";
 import { testReadable, type Readability } from "@/lib/readable";
 import { autolink, checkLink } from "@/lib/sources";
 import type { Current, StreamDetail } from "@/lib/types";
-import { send, type TxState } from "@/lib/write";
+import { refreshReads, send, type TxState } from "@/lib/write";
 import { Seal } from "./Seal";
 import { TxLine, WriteGate } from "./Tx";
 import { useWallet } from "./Wallet";
@@ -95,13 +95,17 @@ export function ReportForm({ stream, current }: { stream: StreamDetail; current:
   async function post() {
     if (!w.address) return;
     const done = await send(w.address, "report", [stream.sid, k, summary.trim(), good], 0n, setTx);
-    if (done.phase === "decided") router.refresh();
+    if (done.phase === "decided") {
+      await refreshReads(stream.sid);
+      router.refresh();
+    }
   }
 
   async function claim() {
     if (!w.address) return;
     const done = await send(w.address, "claim", [stream.sid], 0n, setClaimTx);
     if (done.phase === "decided") {
+      await refreshReads(stream.sid);
       await w.refresh();
       router.refresh();
     }
@@ -110,7 +114,10 @@ export function ReportForm({ stream, current }: { stream: StreamDetail; current:
   async function close() {
     if (!w.address) return;
     const done = await send(w.address, "close", [stream.sid], 0n, setCloseTx);
-    if (done.phase === "decided") router.refresh();
+    if (done.phase === "decided") {
+      await refreshReads(stream.sid);
+      router.refresh();
+    }
   }
 
   const resolved = stream.recent_periods.filter((p) => p.status === "CHECKED" || p.status === "LAPSED").slice(0, 4);
