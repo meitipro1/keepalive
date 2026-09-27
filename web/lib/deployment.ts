@@ -26,4 +26,4 @@ export function addressUrl(address: string): string {
 }
 
 /** The public repository, once there is one. Empty hides the link rather than pointing at a guess. */
-export const REPO_URL = process.env.NEXT_PUBLIC_REPO_URL ?? "";
+export const REPO_URL = process.env.NEXT_PUBLIC_REPO_URL || "https://github.com/meitipro1/keepalive";

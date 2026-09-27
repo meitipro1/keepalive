@@ -11,7 +11,8 @@ everything not yet released.
 
 | | |
 |---|---|
-| Site | **https://keepalive-black.vercel.app** |
+| Site | **https://usekeepalive.vercel.app** |
+| Source | https://github.com/meitipro1/keepalive |
 | Network | GenLayer Studionet, chain 61999 (`0xF22F`), RPC `https://studio.genlayer.com/api` |
 | Contract | [`0x499548b74d3a2EA051f3233b1D5657327D3a0A1d`](https://explorer-studio.genlayer.com/address/0x499548b74d3a2EA051f3233b1D5657327D3a0A1d) |
 | Runtime | GenVM v0.2.16, runner `py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6` |
@@ -159,6 +160,35 @@ position out of the paused stream. The private-document stream read UNREADABLE t
 strike. Two things the record shows that were not planned: LLVM mainline's fourth period went unreported because the
 seed driver was busy running checks and moved past its report window, so the keeper recorded a lapse, which is what
 the contract is for; and the live streams' fifth periods lapsed after the driver stopped reporting.
+
+Because periods resolve in order, a seeded stream that has sat unreported for days needs every missed period lapsed
+before a new report can be checked. To see the whole loop, open a fresh DEMO stream.
+
+### The reviewer's path, walked live
+
+On 2026-09-24 the path a reviewer takes was run end to end on stream 7, from two accounts created for it and funded
+by the site's own faucet. Every write went through the site's signing code
+([`web/scripts/send-as.mjs`](web/scripts/send-as.mjs), genlayer-js with a stand-in EIP-1193 wallet) and was judged by
+the same success test as the site. The source is `github.com/llvm/llvm-project`, chosen after counting its recent
+commits, and the report was written after the window closed from the three commits that landed in it.
+
+| Step | Transaction | Outcome |
+|---|---|---|
+| open a DEMO stream, tranche 10 GEN | [`0x2984d50f…`](https://explorer-studio.genlayer.com/tx/0x2984d50fbcad955add6f4c99d4df82891281aa7c8256a1813621ad23c5767b28) | stream 7 |
+| fund 50 GEN | [`0xb27ea72c…`](https://explorer-studio.genlayer.com/tx/0xb27ea72c74f6f78059d35662efa8af71609fa74dc36979bd00a43eda1ecbe5de) | 50 GEN of shares |
+| report period 1, three commit links | [`0x123fafca…`](https://explorer-studio.genlayer.com/tx/0x123fafca82f809b639df2b99ff753006e72c6a2ef6fe5d44b782371c3789516b) | accepted |
+| check period 1 | [`0xcf757092…`](https://explorer-studio.genlayer.com/tx/0xcf7570929e42b96caf0e28719249d41d7539d94697190eee6f5ee32bf1aecbdd) | ALIVE, 10 GEN released |
+| claim | [`0x41333fd6…`](https://explorer-studio.genlayer.com/tx/0x41333fd600a5d85157ff6e12c65a79938aab03d252f5581f3308c1583f3e26b4) | 10 GEN to the builder |
+| exit everything | [`0x5b622abb…`](https://explorer-studio.genlayer.com/tx/0x5b622abb57626c259d87202f2ee035f28727ba447350ca82562c9f4dc2f0641f) | 40 GEN to the patron |
+| close | [`0x99e27fa5…`](https://explorer-studio.genlayer.com/tx/0x99e27fa5ebbbcdaf420dc41461ef429e9b796679feffd36065dd78d6ec52d738) | stream closed |
+
+The validators' reason for period 1: "Three commits matching the report are shown with timestamps inside the period,
+confirming real LLVM work was landed." After finality the builder's balance went from 100 to 110 GEN and the
+patron's from 50 to 90, to the wei. The first two `close` attempts died on dropped RPC connections without closing
+the stream; the third was accepted, and only that one is counted.
+
+Read back from the chain on 2026-09-27, the seven streams hold 7 ALIVE, 5 QUIET, 2 OFF_MISSION, 1 UNREADABLE and 5
+lapsed periods, and three streams are paused.
 
 ## Tests
 
